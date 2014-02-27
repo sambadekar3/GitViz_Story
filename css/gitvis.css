@@ -149,37 +149,43 @@ path {
 }
 
 .timeAllBar {
-  fill: SteelBlue;
+  //fill: SteelBlue;
+  fill: #159A8F;
   fill-opacity: 0.8;
   z-index: 10;
 }
 
 .timeAllBar:hover {
-  fill: #483D8B;
+  //fill: #483D8B;
+  fill: #127A6F;
   fill-opacity: 0.8;
   z-index: 10;
 }
 
 .timeFirstBar{
-  fill: Lightpink;
-  fill-opacity: 0.8;
+  //fill: Lightpink;
+  fill: #DDFF8B;
+  fill-opacity: 0.9;
   z-index: 20;
 }
 
 .timeFirstBar:hover {
-  fill: Red;
-  fill-opacity: 0.6;
+  //fill: Red;
+  fill: #BBDD6B;
+  fill-opacity: 0.9;
   z-index: 20;
 }
 
 .timeSecondBar{
-  fill: #7FFFD4;
+  //fill: #7FFFD4;
+  fill: #E83430;
   fill-opacity: 0.8;
   z-index: 30;
 }
 
 .timeSecondBar:hover {
-  fill: #228B22;
+  //fill: #228B22;
+  fill: #A13332;
   fill-opacity: 0.8;
   z-index: 30;
 }
