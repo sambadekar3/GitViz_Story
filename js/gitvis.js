@@ -17,6 +17,7 @@ var buckets = 9;
 var buckets_tree = 7;
 var extentVals = null;
 // var colors = ["#ffffd9","#edf8b1","#c7e9b4","#7fcdbb","#41b6c4","#1d91c0","#225ea8","#253494","#081d58"];
+// repo	username	type	name	timestamp	additions	deletions	total	message	userURL	repoURL
 
 var nameMapperObj = {"External": "External User", 
                     "atmos": "Corey Donohoe",
@@ -373,13 +374,15 @@ function init(){
 
 function update(){
   
-     d3.csv('https://dl.dropboxusercontent.com/u/10397477/Infoviz%20Project/balancedDataFull.csv', function(d) {
-    //d3.csv('data/balancedDataFull.csv', function(d) {
+     d3.csv('https://dl.dropboxusercontent.com/u/10397477/Infoviz%20Project/mozillaDataFull.csv', function(d) {
+    //d3.csv('data/mozillaDataFull.csv', function(d) {
          //repo  username  type  name  timestamp additions deletions total message userURL repoURL
          return {
-           repo: nameMapperObj[d.repo],
+           //repo: nameMapperObj[d.repo],
+		   repo: d.repo,
            timestamp: d.timestamp.substring(0,10),
-           username: nameMapperObj[d.username],
+           //username: nameMapperObj[d.username],
+		   username: d.username,
            ietype: +d.type,
            realname: d.name,
            additions: +d.additions,
@@ -427,7 +430,7 @@ function filterData(extentVals){
     heatMapDataNest = null;
     secondChartTimeLineNest = null;
     thirdChartTimeLineNest = null;
-    timeLineLegendData = [{key:'Balanced', colorfill:'SteelBlue'}];
+    timeLineLegendData = [{key:'Mozilla', colorfill:'SteelBlue'}];
 
     if(!firstClick){
         repoMapDataNest = d3.nest()
@@ -1124,7 +1127,8 @@ function renderHeatMap(dataobj) {
 function firstButtonHTML(){
     console.log('firstButton');
     var clicked = (firstClick == 'user') ? userSelected : repoSelected;
-    var link = (firstClick == 'user') ? ReverseMapper[userSelected] : 'balanced/' + ReverseMapper[repoSelected];
+    //var link = (firstClick == 'user') ? ReverseMapper[userSelected] : 'mozilla/' + ReverseMapper[repoSelected];
+	var link = (firstClick == 'user') ? userSelected : 'mozilla/' + repoSelected;
     link = "\"http://github.com/" + link + "\"";
 
     return "<ul class='nav createFirstButtons' style='margin-top:5px'><li><button type='button' onclick='firstClicked()' class='btn btn-small'>" + clicked + "</button></li><a href=" + link +" class='btn' target='_blank'>"+"<i class='icon-share'>"+"</i></a></ul>";       
@@ -1134,7 +1138,8 @@ function firstButtonHTML(){
 function secondButtonHTML(){
     console.log('secondButton');
     var clicked = (secondClick == 'user') ? userSelected : repoSelected;
-    var link = 'balanced/' + ReverseMapper[repoSelected] + '/commits?author=' + ReverseMapper[userSelected];
+    //var link = 'mozilla/' + ReverseMapper[repoSelected] + '/commits?author=' + ReverseMapper[userSelected];
+	var link = 'mozilla/' + repoSelected + '/commits?author=' + userSelected;
     link = "\"http://github.com/" + link + "\"";    
 
     return "<ul class='nav createSecondButtons' style='margin-top:5px'><a class='btn btn-small' href=" + link + " target='_blank'>" + clicked + "<i class='icon-share'></i></a>";       
