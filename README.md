@@ -5,6 +5,7 @@ I'm currently doing user study before continuing further development.
 
 You can check the latest application at:
 http://samratambadekar.com/projects/GitCity/circularViz.html
+
 Please give it some time to load.
 
 ### Description:
