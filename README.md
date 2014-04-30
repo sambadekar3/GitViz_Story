@@ -5,7 +5,7 @@ I'm currently doing user study before continuing further development.
 
 You can check the latest application at:
 http://samratambadekar.com/projects/GitCity/circularViz.html
-
+Please give it some time to load.
 
 ### Description:
 GitCities is a visualization concept that attempts to capture the dynamic nature of the activity on GitHub. Here I’ve used city as a base metaphor because cities, in my opinion, are the best examples of dynamism. For each city there are areas that see more traffic during different times of the day and different days of the week. There are opinions and ideologies that resonate within the residents. Each and every city in our world has a character of its own and the best way to know a city is to visit it.
