@@ -25,5 +25,5 @@ For this POC I have used Mozilla's public repositories and contributors on GitHu
 - Your imagination
 
 ### Note: 
-You are free to use the concept / idea as long as you promise to make it more beautiful.
+You are free to use the concept / idea as long as you don't plan to brand them as your own.
 If you have any questions or comments you can contact me on: samrat.ambadekar@gmail.com
